@@ -3,6 +3,8 @@ import SearchBar from "./components/SearchBar";
 import WeatherCard from "./components/WeatherCard";
 import ForecastList from "./components/ForecastList";
 import "./App.css";
+import notFoundImg from "./assets/not-found.png";
+import searchCityImg from "./assets/search-city.png";
 
 export default function App() {
   const [city, setCity] = useState("");
@@ -102,7 +104,7 @@ export default function App() {
           ) : error ? (
             <div className="flex flex-col items-center">
               <img
-                src="/not-found.png"
+                src={notFoundImg}
                 alt="City Not Found"
                 className="w-48 h-48 object-contain"
               />
@@ -113,7 +115,7 @@ export default function App() {
           ) : !weatherData ? (
             <div className="flex flex-col items-center">
               <img
-                src="/search-city.png"
+                src={searchCityImg}
                 alt="Search City"
                 className="w-48 h-48 object-contain"
               />
